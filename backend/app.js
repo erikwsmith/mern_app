@@ -1,8 +1,10 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
-require('dotenv').config();
+const appRouter = require('routes/Router');
 
 //middleware
 //const corsOptions = {origin: 'http://localhost:3000'};
@@ -23,6 +25,4 @@ mongoose.connect(process.env.MONGO_URI).then( () => {
 })
 
 //route
-app.get('/', (req, res) => {
-    res.status(201).json({message: 'Connected to Backend!'});
-})
+app.use('/', appRouter);
