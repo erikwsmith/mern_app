@@ -23,10 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          cd backend && npm install
-          cd backend && node app.js
-          cd frontend && npm install
-          cd frontend && npm run build
+          cd backend && npm install && node app.js && cd frontend && npm install && npm run build
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
