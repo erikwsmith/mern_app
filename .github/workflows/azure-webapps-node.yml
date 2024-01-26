@@ -44,7 +44,7 @@ jobs:
 
     - name: npm install, build, and test
       run: |
-        install-backend && node app.js
+        install-backend
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
