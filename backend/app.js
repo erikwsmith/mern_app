@@ -5,7 +5,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 //middleware
-const corsOptions = {origin: 'http://localhost:3000'};
+//const corsOptions = {origin: 'http://localhost:3000'};
+const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com/'};
+
 
 app.use(express.json());
 app.use(cors(corsOptions));
