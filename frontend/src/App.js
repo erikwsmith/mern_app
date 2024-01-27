@@ -11,7 +11,6 @@ function App() {
       .then( (data) => setMessage(data.message) )
   }, [] );
 
-
   return (
     <div className="App">
       <h1>{message}</h1>
