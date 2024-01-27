@@ -4,7 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
-const appRouter = require('routes/Router');
+const appRouter = require('./routes/appRouter');
 
 //middleware
 //const corsOptions = {origin: 'http://localhost:3000'};

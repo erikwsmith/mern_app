@@ -9,7 +9,8 @@
     "start-backend": "cd backend && node app.js",
     "install-frontend": "cd frontend && npm install",
     "start-frontend": "cd frontend && npm run start",
-    "build-frontend": "cd frontend && npm run build"
+    "build-frontend": "cd frontend && npm run build",
+    "start-all": "npm run install-backend && npm run start-backend && npm run install-frontend && npm run start-frontend"
   },
   "keywords": [],
   "author": "",
