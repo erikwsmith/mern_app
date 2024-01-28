@@ -7,8 +7,8 @@ const cors = require('cors');
 const appRouter = require('./routes/appRouter');
 
 //middleware
-const corsOptions = {origin: 'http://localhost:3000'};
-//const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com'};
+//const corsOptions = {origin: 'http://localhost:3000'};
+const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com'};
 
 
 app.use(express.json());
