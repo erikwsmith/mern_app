@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 // get all records
 const getRecords = async(req, res) =>{
-    const records = await Record.find({});
+    const records = await Record.find({}).sort({orderFromSun: 'asc'});
     res.status(200).json(records);
 };
 

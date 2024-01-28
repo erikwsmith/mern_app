@@ -1,19 +1,28 @@
-import{ useEffect, useState} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Records from './pages/Records';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [ message, setMessage ] = useState("");
-
-  //fetching message from backend on mount
-  useEffect( () => {
-    //fetch('http://localhost:4000')
-    fetch('https://erik-smith-capstone.onrender.com/')
-      .then( (res) => res.json() )
-      .then( (data) => setMessage(data.message) )
-  }, [] );
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <BrowserRouter>
+        <Navbar />
+        <div className = 'pages'>
+          <Routes>
+            <Route 
+              path='/' 
+              element={<Home />}
+            />
+            <Route 
+              path='/records' 
+              element={<Records />}
+            />
+          </Routes>
+        </div>
+      </BrowserRouter>      
     </div>
   );
 }

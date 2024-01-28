@@ -5,7 +5,7 @@ const {getRecords, createRecord} = require('../controllers/appControllers');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.status(201).json({message: 'Connected to Backend!'});
+    res.status(201).json({message: 'React Web App'});
 })
 
 //get all records
