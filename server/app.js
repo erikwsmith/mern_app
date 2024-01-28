@@ -24,13 +24,5 @@ mongoose.connect(process.env.MONGO_URI).then( () => {
     console.log(err);
 })
 
-app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname, '\\/frontend/public/index.html'), function(err) {
-      if (err) {
-        res.status(500).send(err)
-      }
-    })
-  })
-
 //route
 app.use('/', appRouter);
