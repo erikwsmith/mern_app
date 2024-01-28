@@ -8,6 +8,14 @@ router.get('/', (req, res) => {
     res.status(201).json({message: 'React Web App'});
 })
 
+app.get('/*', function(req, res) {
+    res.sendFile(path.join(__dirname, '.../frontend/public/index.html'), function(err) {
+      if (err) {
+        res.status(500).send(err)
+      }
+    })
+  })
+
 //get all records
 router.get('/records', getRecords);
 
