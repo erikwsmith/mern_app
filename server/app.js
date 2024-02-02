@@ -46,7 +46,7 @@ appPool.connect().then(function(pool) {
 });
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 //route
 app.use('/', appRouter);
