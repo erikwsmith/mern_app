@@ -14,7 +14,6 @@ const createRecord = async(req, res) =>{
 
 // Get patient records from SQL Server
 const getPatients = async(req, res) =>{
-    res.set('Access-Control-Allow-Origin', '*');
     await req.app.locals.db.query(
         `SELECT * 
         FROM [SalesLT].[ProductCategory] 
