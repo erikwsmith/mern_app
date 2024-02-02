@@ -15,6 +15,6 @@ router.get('/records', getRecords);
 router.get('/create_record', createRecord);
 
 //get all patients
-router.get('/patients', getRecords);
+router.get('/patients', getPatients);
 
 module.exports = router;
