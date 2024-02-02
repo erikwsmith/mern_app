@@ -23,15 +23,8 @@ const appPool = new sql.ConnectionPool(sqlConfig);
 
 //middleware
 //const corsOptions = {origin: 'http://localhost:3000'};
-//const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com'};
-const corsOptions = {origin: '*'};
+const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com'};
 
-
-app.use(express.json());
-app.use(cors(corsOptions));
-
-//route
-app.use('/', appRouter);
 
 // Connect to MONGO DB
 mongoose.connect(process.env.MONGO_URI).then( () => {
@@ -51,5 +44,9 @@ appPool.connect().then(function(pool) {
     console.error('Error creating connection pool', err)
 });
 
+app.use(express.json());
+app.use(cors(corsOptions));
 
+//route
+app.use('/', appRouter);
 

@@ -1,6 +1,5 @@
 const Record = require('../models/appModels');
 const mongoose = require('mongoose');
-const sql = require('mssql');
 
 // get all records
 const getRecords = async(req, res) =>{
