@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 })
 
 //get all records
-router.get('/records', getRecords);
+router.get('/records', getPatients);
 
 //create record
 router.get('/create_record', createRecord);
