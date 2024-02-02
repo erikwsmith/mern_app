@@ -9,12 +9,12 @@ router.get('/', (req, res) => {
 })
 
 //get all records
-router.get('/records', getPatients);
+router.get('/records', getRecords);
 
 //create record
 router.get('/create_record', createRecord);
 
 //get all patients
-router.get('/patients', getPatients);
+router.get('/patients', getRecords);
 
 module.exports = router;
