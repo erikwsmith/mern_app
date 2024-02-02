@@ -23,7 +23,7 @@ const appPool = new sql.ConnectionPool(sqlConfig);
 
 //middleware
 //const corsOptions = {origin: 'http://localhost:3000'};
-const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com/'};
+const corsOptions = {origin: 'https://erik-smith-capstone-client.onrender.com'};
 
 
 // Connect to MONGO DB
