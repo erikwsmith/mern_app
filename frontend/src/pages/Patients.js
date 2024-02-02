@@ -8,7 +8,7 @@ const Patients = () => {
     useEffect( () => {
         const fetchPatients = async() =>{
             //const response = await fetch('http://localhost:4000/patients')
-            const response = await fetch('https://cors-anywhere.herokuapp.com/https://erik-smith-capstone.onrender.com/patients')
+            const response = await fetch('https://erik-smith-capstone.onrender.com/patients')
             const json = await response.json();
 
             // check for database records and update the 'patients' state
