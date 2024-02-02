@@ -1,8 +1,8 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Records from './pages/Records';
-import Navbar from './components/Navbar';
+import Patients from './pages/Patients';
 
 function App() {
 
@@ -19,6 +19,10 @@ function App() {
             <Route 
               path='/records' 
               element={<Records />}
+            />
+            <Route 
+              path='/patients' 
+              element={<Patients />}
             />
           </Routes>
         </div>

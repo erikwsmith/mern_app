@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {getRecords, createRecord} = require('../controllers/appControllers');
+const {getRecords, createRecord, getPatients} = require('../controllers/appControllers');
 
 const router = express.Router();
 
@@ -13,5 +13,8 @@ router.get('/records', getRecords);
 
 //create record
 router.get('/create_record', createRecord);
+
+//get all patients
+router.get('/patients', getPatients);
 
 module.exports = router;
