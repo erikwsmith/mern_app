@@ -13,6 +13,13 @@ const appPool = new sql.ConnectionPool(sqlConfig);
 //middleware
 app.use(express.json());
 app.use(cors(corsOptions));
+app.use((req, res, next)=>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Reqeuested-With, Content-Type, Accept");
+    next();
+})
 
 // Connect to MONGO DB
 mongoose.connect(process.env.MONGO_URI).then( () => {
