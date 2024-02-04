@@ -12,10 +12,10 @@ const appPool = new sql.ConnectionPool(sqlConfig);
 
 // Connect to MONGO DB
 mongoose.connect(process.env.MONGO_URI).then( () => {
-    const PORT = process.env.PORT || 8000;
+    /*const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => {
         console.log(`App is listening on PORT ${PORT} and connected to MONGO DB!`);
-    })
+    })*/
 }).catch(err => {
     console.log(err);
 })
@@ -23,7 +23,10 @@ mongoose.connect(process.env.MONGO_URI).then( () => {
 //connect to AZURE SQL DB
 appPool.connect().then(function(pool) {
     app.locals.db = pool;
-    console.log('App is connected to Azure SQL Database!')
+    const PORT = process.env.PORT || 8000;
+    app.listen(PORT, () => {
+        console.log(`App is listening on PORT ${PORT} and connected to AZURE SQL DB!`);
+    })
 }).catch(function(err) {
     console.error('Error creating connection pool', err)
 });
