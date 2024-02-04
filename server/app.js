@@ -10,6 +10,20 @@ const sql = require('mssql');
 const sqlConfig = require('./config/AzureSQL');
 const appPool = new sql.ConnectionPool(sqlConfig);
 
+//middleware
+app.use(express.json());
+app.use(cors(corsOptions));
+app.use((req, res, next)=>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Reqeuested-With, Content-Type, Accept");
+    next();
+})
+
+//route
+app.use('/', appRouter);
+
 // Connect to MONGO DB
 mongoose.connect(process.env.MONGO_URI).then( () => {
     /*const PORT = process.env.PORT || 8000;
@@ -31,19 +45,5 @@ appPool.connect().then(function(pool) {
     console.error('Error creating connection pool', err)
 });
 
-//middleware
-app.use(express.json());
-app.use(cors(corsOptions));
-app.use((req, res, next)=>{
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Reqeuested-With, Content-Type, Accept");
-    next();
-})
 
-
-
-//route
-app.use('/', appRouter);
 
